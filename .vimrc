@@ -12,13 +12,14 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'sjl/gundo.vim'
 Plugin 'scrooloose/nerdtree'
-"Plugin 'airblade/vim-gitgutter'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'ambv/black'
 Plugin 'junegunn/fzf.vim'
 Plugin 'mileszs/ack.vim'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'tmux-plugins/vim-tmux-focus-events'
 
 call vundle#end()
 filetype plugin indent on
@@ -212,6 +213,10 @@ augroup autoformatgroup
     " autocmd BufWritePost *.py execute ':silent Black'
 augroup END
 
+augroup autoreadgroup
+    autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * if mode() != 'c' | checktime | endif
+    autocmd FileChangedShellPost * echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
+augroup END
 " }}}
 " Virtualenv {{{
 call ActivateVirtualEnv()
