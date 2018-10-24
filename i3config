@@ -168,6 +168,10 @@ workspace_layout stacking
 
 bindsym $mod+x move workspace to output right
 
+bindsym $mod+Shift+equal exec --no-startup-id amixer -q sset Master 1%+
+bindsym $mod+Shift+minus exec --no-startup-id amixer -q sset Master 1%-
+bindsym $mod+Shift+BackSpace exec --no-startup-id ~/.dotfiles/bin/toggle_mute.sh
+
 client.focused          #002b36 #586e75 #fdf6e3 #268bd2
 client.focused_inactive #002b36 #073642 #839496 #073642
 client.unfocused        #002b36 #073642 #839496 #073642
