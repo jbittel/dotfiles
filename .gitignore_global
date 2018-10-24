@@ -1,0 +1,15 @@
+*.py[cod]
+__pycache__/
+*.sw[po]
+*.egg-info/
+
+.tox/
+.mypy_cache/
+
+.env
+.coverage
+.DS_Store
+Session.vim
+
+.envrc
+.venvrc
