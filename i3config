@@ -152,7 +152,7 @@ bindsym $mod+Delete exec --no-startup-id $i3exit lock
 
 set $i3screen ~/.dotfiles/bin/i3screen.sh
 set $mode_screen Screen layout (h) home, (w) work, (l) laptop
-bindsym $mod+Insert mode "$mode_screen"
+bindsym $mod+Home mode "$mode_screen"
 
 mode "$mode_screen" {
         bindsym h exec --no-startup-id $i3screen home, mode "default"
