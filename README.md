@@ -1,4 +1,6 @@
 ```
+mkdir -p ~/.config/i3 ~/.config/terminator ~/.config/termite
+
 ln -s ~/.dotfiles/.vimrc ~/.vimrc
 ln -s ~/.dotfiles/i3config ~/.config/i3/config
 ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
