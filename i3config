@@ -197,6 +197,9 @@ bar {
         tray_output eDP-1
 }
 
+# Custom window settings
+for_window [title="About Mozilla Firefox$"] floating enable
+
 exec --no-startup-id xsetroot -solid "#000000"
 
 exec --no-startup-id xautolock -time 10 -detectsleep -locker "~/i3exit.sh lock"
