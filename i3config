@@ -198,7 +198,7 @@ bar {
 }
 
 # Custom window settings
-for_window [title="About Mozilla Firefox$"] floating enable
+for_window [class="Firefox" window_role="About"] floating enable
 
 # Initialize system and settings
 exec ~/.dotfiles/bin/autoexec.sh
