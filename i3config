@@ -212,7 +212,7 @@ bar {
 
 # Custom window settings
 for_window [class="Firefox" window_role="About"] floating enable
-for_window [class="Termite"] title_format "%title | <strong>%instance</strong>"
+for_window [class="Termite"] title_format "%title | <b>%instance</b>"
 
 # Initialize system and settings
 exec ~/.dotfiles/bin/autoexec
