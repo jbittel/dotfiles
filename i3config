@@ -189,6 +189,8 @@ bindsym --release Print exec --no-startup-id gnome-screenshot
 bindsym --release $mod+Print exec --no-startup-id gnome-screenshot -w -B
 bindsym --release $mod+Shift+Print exec --no-startup-id gnome-screenshot -a
 
+bindsym $mod+n exec nautilus
+
 client.focused          #002b36 #586e75 #fdf6e3 #268bd2
 client.focused_inactive #002b36 #073642 #839496 #073642
 client.unfocused        #002b36 #073642 #839496 #073642
