@@ -1,18 +1,20 @@
 #!/bin/sh
 
-DICTIONARY_PATH="/usr/share/dict/words"
+EMOTIONS_LIST="$HOME/.dotfiles/etc/word-list-emotions.txt"
+NOUNS_LIST="$HOME/.dotfiles/etc/word-list-nouns.txt"
 
-instance_name() {
-    # Generate a random string, consisting of two lowercase dictionary
-    # words joined by a comma, e.g. "detentions-northerly"
-    local WORDS=$(shuf -n2 $DICTIONARY_PATH | sed "s/'s//" | tr "[:upper:]" "[:lower:]" | paste -sd "-")
-    echo "$WORDS"
+_get_word() {
+	# Get a random lowercase word from the provided wordlist
+    local word="$(shuf -n1 $1 | tr "[:upper:]" "[:lower:]")"
+    echo "$word"
 }
 
-instance_number() {
+_get_number() {
     # Generate a random two digit zero padded number
-    local NUMBER=$(seq -w 0 99 | shuf -n 1)
-    echo "$NUMBER"
+    local number=$(seq -w 0 99 | shuf -n 1)
+    echo "$number"
 }
 
-termite --name="$(instance_name):$(instance_number)"
+INSTANCE_NAME="$(_get_word $EMOTIONS_LIST)-$(_get_word $NOUNS_LIST)"
+
+termite --name=$INSTANCE_NAME
