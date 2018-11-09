@@ -23,6 +23,6 @@ _get_number() {
     echo "${number}"
 }
 
-INSTANCE_NAME="$(_get_word ${EMOTIONS_LIST})-$(_get_word ${NOUNS_LIST})"
+INSTANCE_NAME="$(_get_word "${EMOTIONS_LIST}")-$(_get_word "${NOUNS_LIST}")"
 
-termite --name="${INSTANCE_NAME}"
+exec termite --name="${INSTANCE_NAME}"
