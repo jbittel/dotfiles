@@ -29,29 +29,24 @@
 	changed = green
 	untracked = cyan
 [alias]
+    a = add --all
 	b = branch -vv
+    c = commit
+    cm = commit -m
+    di = diff
+    ds = diff --staged
+    bd = branch -D
 	co = checkout
+	cob = checkout -b
 	ff = pull --ff-only
 	fix = commit --fixup HEAD
 	ls = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s\\ %Cblue[%cn]" --decorate --date=short
 	lsb = log --graph --decorate --oneline --all --simplify-by-decoration
+    lsg = log --oneline --graph --all --decorate --date=iso
+    p = push
 	st = status
-	unstage = reset HEAD
+	unstage = reset HEAD --
 	up = push --set-upstream origin HEAD
-#	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
-#	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
-#	ld = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=relative
-#	lnc = log --pretty=format:"%h\\ %s\\ [%cn]"
-#	gl = log --graph --pretty='format:%C(yellow)%h%Cblue%d%Creset %s %C(white) %an, %ar%Creset'
-#	lol = log --graph --decorate --pretty=oneline --abbrev-commit
-#	c  = commit
-#	b  = branch
-#	d  = diff
-#	dc = diff --cached
-#	lg = log
-#	a  = add
-#	ap = add --patch
-#	showref = for-each-ref --sort=-committerdate refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))' --count=20
 [push]
 	default = simple
 [rerere]
