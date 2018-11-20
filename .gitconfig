@@ -29,21 +29,21 @@
 	changed = green
 	untracked = cyan
 [alias]
-    a = add --all
+	a = add --all
 	b = branch -vv
-    c = commit
-    cm = commit -m
-    di = diff
-    ds = diff --staged
-    bd = branch -D
+	c = commit
+	cm = commit -m
+	di = diff
+	ds = diff --staged
+	bd = branch -D
 	co = checkout
 	cob = checkout -b
 	ff = pull --ff-only
 	fix = commit --fixup HEAD
 	ls = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s\\ %Cblue[%cn]" --decorate --date=short
 	lsb = log --graph --decorate --oneline --all --simplify-by-decoration
-    lsg = log --oneline --graph --all --decorate --date=iso
-    p = push
+	lsg = log --graph --decorate --oneline --all --date=iso
+	p = push
 	st = status
 	unstage = reset HEAD --
 	up = push --set-upstream origin HEAD
