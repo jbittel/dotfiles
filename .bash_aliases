@@ -5,10 +5,10 @@ alias cat="bat"
 
 alias ag='ag --nobreak --nogroup --noheading --column'
 
-alias aa="git a"
+alias aa="git aa"
 alias bb="git b"
 alias cm="git cm"
-alias com="git com"
-alias di="git di"
+alias di="git d"
+alias ff="git ff"
 alias pu="git p"
 alias st="git st"
