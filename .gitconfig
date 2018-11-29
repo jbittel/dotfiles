@@ -33,6 +33,7 @@
 	aa = add --all
 	b = branch -vv
 	bd = branch -D
+	bump = commit --allow-empty -m "Bump!"
 	c = commit
 	cm = commit -m
 	co = checkout
