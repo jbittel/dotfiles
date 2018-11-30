@@ -2,6 +2,7 @@
 alias ls="exa-linux-x86_64 --long --all"
 alias mkdir="mkdir -pv"
 alias cat="bat"
+alias xx="exit"
 
 alias ag='ag --nobreak --nogroup --noheading --column'
 
