@@ -43,6 +43,8 @@
 	ds = diff --staged
 	ff = pull --ff-only
 	fix = commit --fixup HEAD
+	j = checkout -
+	last = log -1 HEAD
 	ls = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s\\ %Cblue[%cn]" --decorate --date=short
 	lsb = log --graph --decorate --oneline --all --simplify-by-decoration
 	lsg = log --graph --decorate --oneline --all --date=iso
