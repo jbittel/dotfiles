@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+#
+# Given a path, converts it to a dotted Python module path.
+#
+# E.g:
+#   /home/user/work/ -> home.user.work
+#   /home/user/code/test.py -> home.user.code.test
+#
+set -o errexit
+set -o nounset
+set -o pipefail
+
+_dir_to_dotpath() {
+    local path="${1%/}"
+    local dotpath="$(echo "${path}" | tr "/" ".")"
+    echo "${dotpath}"
+}
+
+_file_to_dotpath() {
+    local path="${1%.*}"
+    local dotpath="$(echo "${path}" | tr "/" ".")"
+    echo "${dotpath}"
+}
+
+if [[ -d $1 ]]; then
+    echo "$(_dir_to_dotpath $1)"
+elif [[ -f $1 ]]; then
+    echo "$(_file_to_dotpath $1)"
+else
+    echo "${1} is not a valid path"
+    exit 1
+fi
