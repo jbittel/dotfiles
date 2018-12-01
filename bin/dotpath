@@ -1,10 +1,13 @@
 #!/usr/bin/env bash
 #
 # Given a path, converts it to a dotted Python module path.
+# All additional parameters are concatenated onto the end
+# of the dotpath.
 #
 # E.g:
 #   /home/user/work/ -> home.user.work
 #   /home/user/code/test.py -> home.user.code.test
+#   user/code/a.py Klass method -> user.code.a.Klass.method
 #
 set -o errexit
 set -o nounset
@@ -22,11 +25,31 @@ _file_to_dotpath() {
     echo "${dotpath}"
 }
 
-if [[ -d $1 ]]; then
-    echo "$(_dir_to_dotpath $1)"
-elif [[ -f $1 ]]; then
-    echo "$(_file_to_dotpath $1)"
+_join() {
+    local IFS=
+    local sep="."
+    local join_args=$1
+    shift
+    join_args+="${*/#/$sep}"
+    echo "${join_args}"
+}
+
+path="${1}"
+shift
+
+dotpath=""
+
+if [[ -d ${path} ]]; then
+    dotpath="$(_dir_to_dotpath ${path})"
+elif [[ -f ${path} ]]; then
+    dotpath="$(_file_to_dotpath ${path})"
 else
-    echo "${1} is not a valid path"
+    echo "Error: ${path} is not a valid path"
     exit 1
 fi
+
+if [[ -n "$@" ]]; then
+    dotpath+=".$(_join "$@")"
+fi
+
+echo "${dotpath}"
