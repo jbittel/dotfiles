@@ -15,12 +15,14 @@ set -o pipefail
 
 _dir_to_dotpath() {
     local path="${1%/}"
+    path="${path#/}"
     local dotpath="$(echo "${path}" | tr "/" ".")"
     echo "${dotpath}"
 }
 
 _file_to_dotpath() {
     local path="${1%.*}"
+    path="${path#/}"
     local dotpath="$(echo "${path}" | tr "/" ".")"
     echo "${dotpath}"
 }
@@ -28,7 +30,7 @@ _file_to_dotpath() {
 _join() {
     local IFS=
     local sep="."
-    local join_args=$1
+    local join_args="${1}"
     shift
     join_args+="${*/#/$sep}"
     echo "${join_args}"
