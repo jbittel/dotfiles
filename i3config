@@ -216,5 +216,9 @@ bar {
 for_window [class="Firefox" window_role="About"] floating enable
 for_window [class="Termite"] title_format "%title | <b>%instance</b>"
 
+assign [class="zoom" instance="zoom"] 1
+
+no_focus [class="zoom" instance="zoom" title="^Zoom Cloud Meetings$"]
+
 # Initialize system and settings
 exec ~/.dotfiles/bin/autoexec
