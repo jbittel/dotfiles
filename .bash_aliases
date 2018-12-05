@@ -13,3 +13,5 @@ alias di="git d"
 alias ff="git ff"
 alias pu="git p"
 alias st="git st"
+
+alias apt-upgrade-package="sudo apt-get install --only-upgrade"
