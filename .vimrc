@@ -20,6 +20,7 @@ Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'leafgarland/typescript-vim'
 Plugin 'tmux-plugins/vim-tmux-focus-events'
+Plugin 'fatih/vim-go'
 
 call vundle#end()
 filetype plugin indent on
@@ -254,6 +255,9 @@ nnoremap <leader>u :GundoToggle<CR>
 " }}}
 " Moustache/Handlebars {{{
 let g:mustache_abbreviations = 1
+" }}}
+" vim-go {{{
+let g:go_fmt_command = "goimports"
 " }}}
 
 " vim:foldmethod=marker:foldlevel=0
