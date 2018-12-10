@@ -31,7 +31,7 @@
 [alias]
 	a = add
 	aa = add --all
-	b = branch -vv
+	bb = branch -vv
 	bd = branch -D
 	bump = commit --allow-empty -m "Bump!"
 	c = commit
@@ -39,7 +39,7 @@
 	co = checkout
 	cob = checkout -b
 	com = checkout master
-	d = diff
+	di = diff
 	ds = diff --staged
 	ff = pull --ff-only
 	fix = commit --fixup HEAD
@@ -49,7 +49,7 @@
 	lsb = log --graph --decorate --oneline --all --simplify-by-decoration
 	lsg = log --graph --decorate --oneline --all --date=iso
 	mm = merge --no-edit origin/master
-	p = push
+	pu = push
 	st = status
 	unstage = reset HEAD --
 	up = push --set-upstream origin HEAD

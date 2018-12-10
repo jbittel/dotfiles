@@ -7,11 +7,11 @@ alias xx="exit"
 alias ag='ag --nobreak --nogroup --noheading --column'
 
 alias aa="git aa"
-alias bb="git b"
+alias bb="git bb"
 alias cm="git cm"
-alias di="git d"
+alias di="git di"
 alias ff="git ff"
-alias pu="git p"
+alias pu="git pu"
 alias st="git st"
 
 alias apt-upgrade-package="sudo apt-get install --only-upgrade"
