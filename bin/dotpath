@@ -14,18 +14,20 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-_dir_to_dotpath() {
-    local path="${1%/}"
-    path="${path#/}"
+_path_to_dotpath() {
+    local path="${1#/}"
     local dotpath="$(echo "${path}" | tr "/" ".")"
     echo "${dotpath}"
 }
 
+_dir_to_dotpath() {
+    local path="${1%/}"
+    echo "$(_path_to_dotpath ${path})"
+}
+
 _file_to_dotpath() {
     local path="${1%.*}"
-    path="${path#/}"
-    local dotpath="$(echo "${path}" | tr "/" ".")"
-    echo "${dotpath}"
+    echo "$(_path_to_dotpath ${path})"
 }
 
 _join() {
