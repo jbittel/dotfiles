@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+#
+# Launches the specified media player with a random audio file
+# from within the given path, including sub-directories. If no
+# path is specified, the current directory is used.
+#
+set -o errexit
+set -o nounset
+set -o pipefail
+
+readonly PLAYER_BIN="mplayer"
+
+readonly DIR="${1:-.}"
+
+if [[ ! -d $DIR ]]; then
+    echo "$DIR is not a valid path"
+    exit 1
+fi
+
+_get_rand_audio() {
+    local dir="${1}"
+    local audio="$(find "${dir}" -type f \( -name "*.mp3" -or -name "*.ogg" \) | shuf -n1)"
+    echo "${audio}"
+}
+
+exec "${PLAYER_BIN}" "$(_get_rand_audio "${DIR}")"
