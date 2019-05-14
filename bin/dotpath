@@ -2,12 +2,13 @@
 #
 # Given a path, converts it to a dotted Python module path.
 # All additional parameters are concatenated onto the end
-# of the dotpath.
+# of the dotpath. Dotted paths are passed through unmodified.
 #
 # E.g:
 #   /home/user/work/ -> home.user.work
 #   /home/user/code/test.py -> home.user.code.test
 #   user/code/a.py Klass method -> user.code.a.Klass.method
+#   user.code.b Klass -> user.code.b.Klass
 #
 set -o errexit
 set -o nounset
@@ -41,12 +42,14 @@ shift
 
 dotpath=""
 
-if [[ -d ${path} ]]; then
+if [[ -d "${path}" ]]; then
     dotpath="$(_dir_to_dotpath ${path})"
-elif [[ -f ${path} ]]; then
+elif [[ -f "${path}" ]]; then
     dotpath="$(_file_to_dotpath ${path})"
+elif [[ "${path}" == *"."* ]]; then
+    dotpath="${path}"
 else
-    echo "Error: ${path} is not a valid path"
+    echo "Error: ${path} is not a valid path" >&2
     exit 1
 fi
 
