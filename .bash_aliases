@@ -14,4 +14,5 @@ alias ff="git ff"
 alias pu="git pu"
 alias st="git st"
 
-alias apt-upgrade-package="sudo apt-get install --only-upgrade"
+alias apt-upgrade-package="sudo apt install --only-upgrade"
+alias docker-prune="docker system prune --all --volumes"
