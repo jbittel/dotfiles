@@ -39,8 +39,12 @@ _join() {
     echo "${join_args}"
 }
 
-path="${1}"
-shift
+if [ "$#" == "0" ]; then
+    path="."
+else
+    path="${1}"
+    shift
+fi
 
 dotpath=""
 
