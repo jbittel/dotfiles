@@ -7,7 +7,7 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-readonly TERMINAL_BIN="termite"
+readonly TERMINAL_BIN="alacritty"
 
 readonly EMOTIONS_LIST="${HOME}/.dotfiles/etc/word-list-emotions.txt"
 readonly NOUNS_LIST="${HOME}/.dotfiles/etc/word-list-nouns.txt"
@@ -27,4 +27,4 @@ _get_number() {
 
 INSTANCE_NAME="$(_get_word "${EMOTIONS_LIST}")-$(_get_word "${NOUNS_LIST}")"
 
-exec ${TERMINAL_BIN} --name="${INSTANCE_NAME}" "${@}"
+exec ${TERMINAL_BIN} --title "${INSTANCE_NAME}" "${@}"

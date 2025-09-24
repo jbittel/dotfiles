@@ -1,21 +1,23 @@
 ### Bootstrap
 
+Source aliases:
+
 ```bash
-# Create missing directories
-mkdir -p ~/.config/i3 ~/.config/termite ~/.mplayer
+ln -s ~/.dotfiles/.bash_aliases .bash_aliases
+```
+
+Apply configuration:
+
+```bash
+# Create directories
+mkdir -p ~/.config/alacritty ~/.config/sway ~/.config/waybar
 
 # Symlink config files
-ln -s ~/.dotfiles/.vimrc ~/.vimrc
-ln -s ~/.dotfiles/i3config ~/.config/i3/config
+ln -s ~/.dotfiles/sway/config ~/.config/sway/config
+ln -s ~/.dotfiles/waybar/config.jsonc ~/.config/waybar/config.jsonc
+ln -s ~/.dotfiles/waybar/style.css ~/.config/waybar/style.css
+ln -s ~/.dotfiles/waybar/colorscheme.css ~/.config/waybar/colorscheme.css
 ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
-ln -s ~/.dotfiles/termite ~/.config/termite/config
-ln -s ~/.dotfiles/mplayer/config ~/.mplayer/config
-
-# Source bash aliases
-cat << EOF >> ~/.bash_aliases
-
-if [ -f ~/.dotfiles/.bash_aliases ]; then
-    . ~/.dotfiles/.bash_aliases
-fi
-EOF
+ln -s ~/.dotfiles/alacritty.toml ~/.config/alacritty/alacritty.toml
+ln -s ~/.dotfiles/.vimrc ~/.vimrc
 ```

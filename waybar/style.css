@@ -1,0 +1,103 @@
+@import url("colorscheme.css");
+
+* {
+  font-family: FontAwesome, "DejaVu Sans Mono";
+  font-size: 11px;
+}
+
+window#waybar {
+  background-color: @base00;
+  color: @base05;
+  transition-property: background-color;
+  transition-duration: 0.4s;
+}
+
+#workspaces button {
+  padding: 0 5px;
+  color: @base05;
+  border: none;
+  border-radius: 0;
+}
+
+#workspaces button:hover {
+  background: rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0 -1px @base05;
+  text-shadow: inherit;
+}
+
+#workspaces button.focused {
+  background-color: @base0D;
+  color: @base00;
+}
+
+#workspaces button.visible:not(.focused) {
+  background-color: @base01;
+  color: @base05;
+}
+
+#workspaces button.urgent {
+  background-color: @base01;
+  color: @base08;
+}
+
+#mode {
+  background-color: @base0D;
+  border-bottom: 1px solid @base00;
+  color: @base00;
+}
+
+#battery,
+#clock,
+#cpu,
+#load,
+#disk,
+#memory,
+#network,
+#tray,
+#mode {
+  padding: 0 4px;
+}
+
+#custom-separator {
+  opacity: 0.3;
+}
+
+#window,
+#workspaces {
+  margin: 0 4px;
+}
+
+/* If workspaces is the leftmost module, omit left margin */
+.modules-left > widget:first-child > #workspaces {
+  margin-left: 0;
+}
+
+/* If workspaces is the rightmost module, omit right margin */
+.modules-right > widget:last-child > #workspaces {
+  margin-right: 0;
+}
+
+#battery.warning:not(.charging) {
+  background-color: @base08;
+  color: @base00;
+}
+
+#battery.critical:not(.charging) {
+  background-color: @base08;
+  color: @base00;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+#memory.warning {
+  background-color: @base08;
+  color: @base00;
+}
+
+#network.disconnected {
+  background-color: @base08;
+  color: @base00;
+}

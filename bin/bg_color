@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+#
+# Sets the current background color based on the time of day.
+#
+set -o errexit
+set -o nounset
+set -o pipefail
+
+# Determine an RBG value for the current hour
+_get_rgb() {
+    local current_hour=$(date +%k)
+    case "$current_hour" in
+        0) echo "00000a";;
+        1) echo "020111";;
+        2) echo "020111";;
+        3) echo "020111";;
+        4) echo "20202c";;
+        5) echo "40405c";;
+        6) echo "4a4969";;
+        7) echo "757abf";;
+        8) echo "82addb";;
+        9) echo "94c5f8";;
+        10) echo "b7eaff";;
+        11) echo "9be2fe";;
+        12) echo "90dffe";;
+        13) echo "57c1eb";;
+        14) echo "2d91c2";;
+        15) echo "2473ab";;
+        16) echo "1e528e";;
+        17) echo "1e528e";;
+        18) echo "154277";;
+        19) echo "163c52";;
+        20) echo "071b26";;
+        21) echo "010a10";;
+        22) echo "090401";;
+        23) echo "00000c";;
+        *) echo "000000";;
+    esac
+}
+
+while true; do
+    swaymsg output "*" background "#$(_get_rgb)" solid_color
+    sleep 600
+done

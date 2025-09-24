@@ -1,0 +1,8 @@
+bindsym Control+grave exec makoctl dismiss --all
+bindsym Control+Shift+grave exec makoctl invoke
+
+bindsym Control+Shift+comma exec makoctl dismiss
+bindsym Control+Shift+period exec makoctl restore
+bindsym Control+Shift+slash exec makoctl menu bemenu -p 'Notification action: '
+
+exec mako --config ~/.dotfiles/mako/config

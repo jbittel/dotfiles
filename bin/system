@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+case "$1" in
+    suspend)
+        swaylock -f -c 000000 && systemctl suspend
+        ;;
+    reboot)
+        systemctl reboot
+        ;;
+    shutdown)
+        systemctl poweroff
+        ;;
+    *)
+        echo "Usage: $0 {suspend|reboot|shutdown}"
+        exit 1
+esac
+
+exit 0

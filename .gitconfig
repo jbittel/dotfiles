@@ -33,26 +33,33 @@
 	aa = add --all
 	bb = branch -vv
 	bd = branch -D
-	bump = commit --allow-empty -m "Bump!"
+	bump = commit --allow-empty -m \"Bump!\"
 	c = commit
 	cm = commit -m
 	co = checkout
 	cob = checkout -b
-	com = checkout master
+	com = "!bash --rcfile ~/.dotfiles/.bash_aliases -ci 'git checkout $(git_main_branch)'"
+	df = "!bash --rcfile ~/.dotfiles/.bash_aliases -ci 'git diff --name-only $(git_main_branch)'"
 	di = diff
-	ds = diff --staged
+	dim = "!bash --rcfile ~/.dotfiles/.bash_aliases -ci 'git diff $(git_main_branch)'"
+	dis = diff --staged
+	dist = "!bash --rcfile ~/.dotfiles/.bash_aliases -ci 'git diff $(git_main_branch) --stat'"
 	ff = pull --ff-only
 	fix = commit --fixup HEAD
 	j = checkout -
+	la = "!git config --get-regexp '^alias\\.' | cut -c 7- | awk '{ i = index($0, \" \"); print $1 \"\\t\" substr($0, i+1) }'"
 	last = log -1 HEAD
 	ls = log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s\\ %Cblue[%cn]" --decorate --date=short
 	lsb = log --graph --decorate --oneline --all --simplify-by-decoration
 	lsg = log --graph --decorate --oneline --all --date=iso
-	mm = merge --no-edit origin/master
+	mm = "!bash --rcfile ~/.dotfiles/.bash_aliases -ci 'git merge --no-edit $(git_main_branch)'"
 	pu = push
+	rem = "!bash --rcfile ~/.dotfiles/.bash_aliases -ci 'git rebase $(git_main_branch) --stat'"
 	st = status
+	undo = reset --soft HEAD~1
 	unstage = reset HEAD --
 	up = push --set-upstream origin HEAD
+	r = remote --verbose
 [push]
 	default = simple
 [rerere]

@@ -1,0 +1,76 @@
+{
+    "layer": "top",
+    "position": "bottom",
+    "spacing": 4,
+    "modules-left": ["sway/workspaces"],
+    "modules-center": ["sway/mode"],
+    "modules-right": [
+        "cpu",
+        "custom/separator",
+        "load",
+        "custom/separator",
+        "memory",
+        "custom/separator",
+        "disk",
+        "custom/separator",
+        "network",
+        "custom/separator",
+        "battery",
+        "custom/separator",
+        "clock#utc",
+        "custom/separator",
+        "clock#pst",
+        "tray"
+    ],
+    "custom/separator": {
+        "format": "|",
+        "interval": "once",
+        "tooltip": false
+    },
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "cpu": {
+        "interval": 10,
+        "format": " {usage}%"
+    },
+    "load": {
+        "interval": 10,
+        "format": " {load1}"
+    },
+    "memory": {
+        "format": " {percentage}%"
+
+    },
+    "disk": {
+        "format": "⛁ {percentage_free}%"
+
+    },
+    "network": {
+        "format-wifi": " {essid} ({signalStrength}%)",
+        "format-ethernet": " {ipaddr}/{cidr}",
+        "tooltip-format": "{ifname} via {gwaddr}",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "clock#pst": {
+        "interval": 5,
+        "format": "{:%Y-%m-%d %H:%M}",
+        "timezone": "America/Los_Angeles",
+        "tooltip-format": "<tt>{calendar}</tt>"
+    },
+    "clock#utc": {
+        "interval": 5,
+        "format": "{:%H:%M %Z}",
+        "timezone": "Etc/UTC",
+        "tooltip": false,
+    },
+    "tray": {
+        "spacing": 5
+  }
+}

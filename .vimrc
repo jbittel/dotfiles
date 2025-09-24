@@ -1,29 +1,29 @@
 " Vundle {{{
-set nocompatible
-filetype off
+" set nocompatible
+" filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-set runtimepath+=~/.fzf
-call vundle#begin()
+" set rtp+=~/.vim/bundle/Vundle.vim
+" set runtimepath+=~/.fzf
+" call vundle#begin()
 
-Plugin 'VundleVim/Vundle.vim'
+" Plugin 'VundleVim/Vundle.vim'
 
 " Custom plugins here
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'sjl/gundo.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'ambv/black'
-Plugin 'junegunn/fzf.vim'
-Plugin 'mileszs/ack.vim'
-Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'tmux-plugins/vim-tmux-focus-events'
-Plugin 'fatih/vim-go'
+" Plugin 'altercation/vim-colors-solarized'
+" Plugin 'sjl/gundo.vim'
+" Plugin 'scrooloose/nerdtree'
+" Plugin 'airblade/vim-gitgutter'
+" Plugin 'ambv/black'
+" Plugin 'junegunn/fzf.vim'
+" Plugin 'mileszs/ack.vim'
+" Plugin 'mustache/vim-mustache-handlebars'
+" Plugin 'Valloric/YouCompleteMe'
+" Plugin 'leafgarland/typescript-vim'
+" Plugin 'tmux-plugins/vim-tmux-focus-events'
+" Plugin 'fatih/vim-go'
 
-call vundle#end()
-filetype plugin indent on
+" call vundle#end()
+" filetype plugin indent on
 " }}}
 " Custom Functions {{{
 " strips trailing whitespace at the end of lines
@@ -52,7 +52,7 @@ endfunction
 " }}}
 " Colors {{{
 syntax enable              " enable syntax highlighting
-colorscheme solarized
+" colorscheme solarized
 set background=dark
 " }}}
 " Misc {{{
