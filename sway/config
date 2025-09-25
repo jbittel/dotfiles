@@ -222,18 +222,3 @@ bindsym --release $mod+Home exec flameshot full --path ~/Pictures/screenshots
 
 for_window [class="firefox" window_role="About"] floating enable
 for_window [class="Alacritty"] title_format "%title | <b>%instance</b>"
-
-set $system ~/.dotfiles/bin/system
-set $mode_system System (r) reboot, (s) suspend, (Shift+s) shutdown
-bindsym $mod+Delete mode "$mode_system"
-
-mode "$mode_system" {
-        bindsym r exec $system reboot, mode "default"
-        bindsym s exec $system suspend, mode "default"
-        bindsym Shift+s exec $system shutdown, mode "default"
-
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-
-bindsym $mod+End exec swaylock -f -c 556873

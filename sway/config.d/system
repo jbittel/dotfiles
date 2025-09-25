@@ -1,0 +1,15 @@
+set $system ~/.dotfiles/bin/system
+set $mode_system System (l) lock, (s) suspend, (r) reboot, (Shift+s) shutdown
+bindsym $mod+Delete mode "$mode_system"
+
+mode "$mode_system" {
+        bindsym l exec $system lock, mode "default"
+        bindsym s exec $system suspend, mode "default"
+        bindsym r exec $system reboot, mode "default"
+        bindsym Shift+s exec $system shutdown, mode "default"
+
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+
+bindsym $mod+End exec $system lock

@@ -1,8 +1,17 @@
 #!/usr/bin/env bash
+#
+# Invoke system-level actions.
+#
+set -o errexit
+set -o nounset
+set -o pipefail
 
 case "$1" in
+    lock)
+        swaylock -f -c 556873
+        ;;
     suspend)
-        swaylock -f -c 000000 && systemctl suspend
+        swaylock -f -c 556873 && systemctl suspend
         ;;
     reboot)
         systemctl reboot
@@ -11,7 +20,7 @@ case "$1" in
         systemctl poweroff
         ;;
     *)
-        echo "Usage: $0 {suspend|reboot|shutdown}"
+        echo "Usage: $0 {lock|suspend|reboot|shutdown}"
         exit 1
 esac
 
