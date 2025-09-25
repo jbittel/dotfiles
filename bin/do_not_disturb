@@ -2,23 +2,23 @@
 #
 # Get notifcation status or toggle do-not-disturb
 #
-set -o errexit
-set -o nounset
-set -o pipefail
 
 readonly MODE_NAME='do-not-disturb'
 
 status() {
     makoctl mode | grep $MODE_NAME 2>&1 > /dev/null
     if [[ $? -eq 0 ]]; then
-        echo "On"
+        echo ""
+        echo "Notifications off"
     else
-        echo "Off"
+        echo ""
+        echo "Notifications on"
     fi
 }
 
 toggle() {
-    if [[ $(status) == "On" ]]; then
+    echo $(status)
+    if [[ $(status) =~ "Notifications off" ]]; then
         makoctl mode -r $MODE_NAME 2>&1 > /dev/null
     else
         makoctl mode -a $MODE_NAME 2>&1 > /dev/null

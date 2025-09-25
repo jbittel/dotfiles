@@ -20,6 +20,7 @@
         "clock#utc",
         "custom/separator",
         "clock#pst",
+        "custom/dnd",
         "tray"
     ],
     "custom/separator": {
@@ -68,7 +69,16 @@
         "interval": 5,
         "format": "{:%H:%M %Z}",
         "timezone": "Etc/UTC",
-        "tooltip": false,
+        "tooltip": false
+    },
+    "custom/dnd": {
+        "format": "{}",
+        "interval": "once",
+        "exec": "$HOME/.dotfiles/bin/do_not_disturb status",
+        "on-click": "$HOME/.dotfiles/bin/do_not_disturb toggle; pkill -SIGRTMIN+10 waybar",
+        "signal": 10,
+        "exec-on-event": false,
+        "tooltip": false
     },
     "tray": {
         "spacing": 5
