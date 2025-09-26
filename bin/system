@@ -2,9 +2,6 @@
 #
 # Invoke system-level actions.
 #
-set -o errexit
-set -o nounset
-set -o pipefail
 
 case "$1" in
     lock)
