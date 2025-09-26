@@ -1,5 +1,6 @@
 bindsym Control+grave exec makoctl dismiss --all
-bindsym Control+Shift+grave exec makoctl invoke
+bindsym Control+Shift+grave exec ~/.dotfiles/bin/do_not_disturb toggle
+bindsym $mod+Shift+grave exec makoctl invoke
 
 bindsym Control+Shift+comma exec makoctl dismiss
 bindsym Control+Shift+period exec makoctl restore

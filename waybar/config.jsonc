@@ -75,7 +75,7 @@
         "format": "{}",
         "interval": "once",
         "exec": "$HOME/.dotfiles/bin/do_not_disturb status",
-        "on-click": "$HOME/.dotfiles/bin/do_not_disturb toggle; pkill -SIGRTMIN+10 waybar",
+        "on-click": "$HOME/.dotfiles/bin/do_not_disturb toggle",
         "signal": 10,
         "exec-on-event": false,
         "tooltip": false
