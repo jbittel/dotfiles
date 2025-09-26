@@ -1,9 +1,3 @@
-# Default config for sway
-#
-# Copy this to ~/.config/sway/config and edit it to your liking.
-#
-# Read `man 5 sway` for a complete reference.
-
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
@@ -215,10 +209,3 @@ bar {
 
 include /etc/sway/config.d/*
 include ~/.dotfiles/sway/config.d/*
-
-bindsym $mod+n exec xdg-open .
-bindsym --release Home exec flameshot gui --clipboard --path ~/Pictures/screenshots
-bindsym --release $mod+Home exec flameshot full --path ~/Pictures/screenshots
-
-for_window [class="firefox" window_role="About"] floating enable
-for_window [class="Alacritty"] title_format "%title | <b>%instance</b>"

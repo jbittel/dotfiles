@@ -1,0 +1,4 @@
+bindsym $mod+n exec xdg-open .
+
+#bindsym --release Home exec flameshot gui --clipboard --path ~/Pictures/screenshots
+#bindsym --release $mod+Home exec flameshot full --path ~/Pictures/screenshots

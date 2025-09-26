@@ -1,0 +1,2 @@
+for_window [class="firefox" window_role="About"] floating enable
+for_window [class="Alacritty"] title_format "%title | <b>%instance</b>"
