@@ -6,10 +6,7 @@ alias xx="exit"
 alias pbcopy='xclip -selection clipboard'
 alias pbpaste='xclip -selection clipboard -o'
 alias python='python3'
-
 alias ag='ag --nobreak --nogroup --noheading --column'
-
-alias docker-prune="docker system prune --all --volumes"
 
 alias whatami="lsb_release -a && printf '\n' && uname -a"
 
@@ -37,14 +34,6 @@ alias st="git st"
 
 alias com="git com"
 alias rem="git rem"
-
-dctjest() {
-    eval ${BASH_ALIASES[dctjs]} ${@#"ui/"}
-}
-
-dctjests() {
-    eval ${BASH_ALIASES[dctjs]} "-- --updateSnapshot" ${@#"ui/"}
-}
 
 uvsh() {
     local venv_name=${1:-'.venv'}
